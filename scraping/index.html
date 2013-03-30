@@ -1,0 +1,883 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>Aggregate from several resources</title>
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/base/base.css" type="text/css">
+   <style type="text/css">
+    body,html{background:#111;color:#000;}
+    h1{font-size:200%;margin:0;padding:.3em;color: #ADD596;font-weight: bold}
+    #bd{background:#fff url(feedburner.png) no-repeat center;border:1em solid #fff;height: auto}
+    #ft{text-align: left;padding:1em 0;color: #ADD596;}
+    #ft a{color: #ADD596}
+
+    #woorks.js p{float:right;width:20%;margin-top:-3em;}
+    #woorks.js button{display:block;background:#AC46FF;border:1px solid #AC46FF;padding:.2em;color:#fff;margin: 24px 0;-moz-border-radius:5px;}
+    #woorks a{color:#369;}
+    #woorks.js p.fact{float:left;width:77%;padding-right:2%;margin-top:0;}
+    #woorks.js{background:#ADD596;-moz-border-radius:5px;padding:.5em;overflow:auto;}
+
+    #tricks.js p{float:right;width:20%;margin-top:-3em;}
+    #tricks.js button{display:block;background:#AC46FF;border:1px solid #AC46FF;padding:.2em;color:#fff;margin: 24px 0;-moz-border-radius:5px;}
+    #tricks a{color:#369;}
+    #tricks.js p.fact{float:left;width:77%;padding-right:2%;margin-top:0;}
+    #tricks.js{background:#ADD596;-moz-border-radius:5px;padding:.5em;overflow:auto;}
+
+    #phpied.js p{float:right;width:20%;margin-top:-3em;}
+    #phpied.js button{display:block;background:#AC46FF;border:1px solid #AC46FF;padding:.2em;color:#fff;margin: 24px 0;-moz-border-radius:5px;}
+    #phpied a{color:#369;}
+    #phpied.js p.fact{float:left;width:77%;padding-right:2%;margin-top:0;}
+    #phpied.js{background:#ADD596;-moz-border-radius:5px;padding:.5em;overflow:auto;}
+
+
+    #ajaxrain.js p{float:right;width:20%;margin-top:-3em;}
+    #ajaxrain.js button{display:block;background:#AC46FF;border:1px solid #AC46FF;padding:.2em;color:#fff;margin: 24px 0;-moz-border-radius:5px;}
+    #ajaxrain a{color:#369;}
+    #ajaxrain.js p.fact{float:left;width:77%;padding-right:2%;margin-top:0;}
+    #ajaxrain.js{background:#ADD596;-moz-border-radius:5px;padding:.5em;overflow:auto;}
+
+    #ajaxian.js p{float:right;width:20%;margin-top:-3em;}
+    #ajaxian.js button{display:block;background:#AC46FF;border:1px solid #AC46FF;padding:.2em;color:#fff;margin: 24px 0;-moz-border-radius:5px;}
+    #ajaxian a{color:#369;}
+    #ajaxian.js p.fact{float:left;width:77%;padding-right:2%;margin-top:0;}
+    #ajaxian.js{background:#ADD596;-moz-border-radius:5px;padding:.5em;overflow:auto;}
+
+    #nettuts.js p{float:right;width:20%;margin-top:-3em;}
+    #nettuts.js button{display:block;background:#AC46FF;border:1px solid #AC46FF;padding:.2em;color:#fff;margin: 24px 0;-moz-border-radius:5px;}
+    #nettuts a{color:#369;}
+    #nettuts.js p.fact{float:left;width:77%;padding-right:2%;margin-top:0;}
+    #nettuts.js{background:#ADD596;-moz-border-radius:5px;padding:.5em;overflow:auto;}
+
+    #mootoolsblog.js p{float:right;width:20%;margin-top:-3em;}
+    #mootoolsblog.js button{display:block;background:#AC46FF;border:1px solid #AC46FF;padding:.2em;color:#fff;margin: 24px 0;-moz-border-radius:5px;}
+    #mootoolsblog a{color:#369;}
+    #mootoolsblog.js p.fact{float:left;width:77%;padding-right:2%;margin-top:0;}
+    #mootoolsblog.js{background:#ADD596;-moz-border-radius:5px;padding:.5em;overflow:auto;}
+
+   </style>
+</head>
+<body>
+<div id="doc" class="yui-t7">
+   <div id="hd" role="banner"><h1>Turning a RSS Feed page into a widget using YQL</h1></div>
+   <div id="bd" role="main">
+
+	<div class="yui-g">
+
+           <div id="woorks">
+             <h2>Woorks</h2>
+             <p><a href="#">Gets Titles from site</a></p>
+           </div>
+
+           <hr/>  
+
+           <div id="tricks">
+             <h2>css-tricks</h2>
+             <p><a href="#">Gets Titles from site</a></p>
+           </div>
+
+           <hr/>  
+
+           <div id="phpied">
+             <h2>phpied.com</h2>
+             <p><a href="#">Gets Titles from site</a></p>
+           </div>
+
+           <hr/>  
+
+           <div id="ajaxrain">
+             <h2>ajaxrain.com</h2>
+             <p><a href="#">Gets Titles from site</a></p>
+           </div>
+
+           <hr/>  
+
+           <div id="ajaxian">
+             <h2>ajaxian.com</h2>
+             <p><a href="#">Gets Titles from site</a></p>
+           </div>
+
+           <hr/>  
+
+           <div id="nettuts">
+             <h2>nettuts.com</h2>
+             <p><a href="#">Gets Titles from site</a></p>
+           </div>
+
+           <hr/>  
+
+           <div id="mootoolsblog">
+             <h2>mootools.com</h2>
+             <p><a href="#">Gets Titles from site</a></p>
+           </div>
+
+	</div>
+
+	</div>
+   <div id="ft" role="contentinfo"><p>Created By Adrian Statescu</p></div>
+</div>
+
+
+<script type="text/javascript">
+
+/* Get all articles from woorks.com */
+
+var woorks = function() {
+
+    var facts,index = 0;
+
+    function init() {
+
+                facts = document.getElementById('woorks');
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'Loading Articles...';
+
+                if(facts) {  
+
+                      facts.className = 'js';
+
+                      var root = "http://query.yahooapis.com/v1/public/yql?q=";
+
+                      var yql = 'select title,link from rss where url=\'http://feeds.feedburner.com/Woork\'';
+
+                      var url = root + encodeURIComponent(yql) + '&format=json&callback=woorks.seed';
+
+                      loadScript(url,function(){if(window.console){console.log(yql);}});
+                }
+    };
+
+    function loadScript(url,callback) {
+
+             var script = document.createElement('script');
+
+                 script.setAttribute('type','text/javascript');
+
+                 if(script.readyState) {
+
+                      script.onreadystatechange = function() {
+
+                               if(script.readyState == 'loaded' || script.readyState == 'complete' ) {
+
+                                      script.onreadystatechange = null;
+
+                                      callback(); 
+                               }  
+                      }
+
+                 } else {
+
+                      script.onload = function(){
+
+                             callback();
+                      } 
+                 }   
+
+                 script.setAttribute('src',url);
+
+                 document.getElementsByTagName('head')[0].appendChild(script); 
+    };
+
+    function seed(o) {
+
+             var data = o.query.results.item;
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'woorks.com';
+
+             var link = facts.getElementsByTagName('a')[0];
+
+                 link.setAttribute('target','_blank'); 
+
+                 link.innerHTML = 'Go to Link';
+
+             var out = document.createElement('p');
+
+                 out.className = 'fact';
+
+                 facts.insertBefore(out,link.parentNode); 
+                 
+            var a = document.createElement('a');
+
+                facts.appendChild(a); 
+
+            var render = function() {
+
+                link.href = data[index].link;
+
+                out.innerHTML = '<strong>[ ' + (index+1) + ' ]</strong> ' + data[index].title;
+
+                a.innerHTML = data[index++].link;
+
+                if(index == (data.length)) {index = 0;}
+            }
+
+            var button = document.createElement('button');
+
+                button.innerHTML = 'Next Title';
+
+                button.onclick = function(){render();} 
+
+                link.parentNode.insertBefore(button,link);  
+
+                render(); 
+
+    };
+
+    return {init: init, seed: seed};
+}();
+
+woorks.init();
+
+
+/* Get all articles from css-tricks.com */
+
+var tricks = function() {
+
+    var facts,index = 0;
+
+    function init() {
+
+                facts = document.getElementById('tricks');
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'Loading Articles...';
+
+                if(facts) {  
+
+                      facts.className = 'js';
+
+                      var root = "http://query.yahooapis.com/v1/public/yql?q=";
+
+                      var yql = 'select title,link from rss where url="http://feeds2.feedburner.com/CssTricks"';
+
+                      var url = root + encodeURIComponent(yql) + '&format=json&callback=tricks.seed';
+
+                      loadScript(url,function(){if(window.console){console.log(yql);}});
+                }
+    };
+
+    function loadScript(url,callback) {
+
+             var script = document.createElement('script');
+
+                 script.setAttribute('type','text/javascript');
+
+                 if(script.readyState) {
+
+                      script.onreadystatechange = function() {
+
+                               if(script.readyState == 'loaded' || script.readyState == 'complete' ) {
+
+                                      script.onreadystatechange = null;
+
+                                      callback(); 
+                               }  
+                      }
+
+                 } else {
+
+                      script.onload = function(){
+
+                             callback();
+                      } 
+                 }   
+
+                 script.setAttribute('src',url);
+
+                 document.getElementsByTagName('head')[0].appendChild(script); 
+    };
+
+    function seed(o) {
+
+             var data = o.query.results.item;
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'css-tricks.com';
+
+             var link = facts.getElementsByTagName('a')[0];
+
+                 link.setAttribute('target','_blank'); 
+
+                 link.innerHTML = 'Go to Link';
+
+             var out = document.createElement('p');
+
+                 out.className = 'fact';
+
+                 facts.insertBefore(out,link.parentNode); 
+                 
+            var a = document.createElement('a');
+
+                facts.appendChild(a); 
+
+            var render = function() {
+
+                link.href = data[index].link;
+
+                out.innerHTML = '<strong>[ ' + (index+1) + ' ]</strong> ' + data[index].title;
+
+                a.innerHTML = data[index++].link;
+
+                if(index == (data.length)) {index = 0;}
+            }
+
+            var button = document.createElement('button');
+
+                button.innerHTML = 'Next Title';
+
+                button.onclick = function(){render();} 
+
+                link.parentNode.insertBefore(button,link);  
+
+                render(); 
+
+    };
+
+    return {init: init, seed: seed};
+}();
+
+tricks.init();
+
+
+/* Get all articles from phpied.com */
+
+var phpied = function() {
+
+    var facts,index = 0;
+
+    function init() {
+
+                facts = document.getElementById('phpied');
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'Loading Articles...';
+
+                if(facts) {  
+
+                      facts.className = 'js';
+
+                      var root = "http://query.yahooapis.com/v1/public/yql?q=";
+
+                      var yql = 'select title,link from rss where url="http://www.phpied.com/feed/"';
+
+                      var url = root + encodeURIComponent(yql) + '&format=json&callback=phpied.seed';
+
+                      loadScript(url,function(){if(window.console){console.log(yql);}});
+                }
+    };
+
+    function loadScript(url,callback) {
+
+             var script = document.createElement('script');
+
+                 script.setAttribute('type','text/javascript');
+
+                 if(script.readyState) {
+
+                      script.onreadystatechange = function() {
+
+                               if(script.readyState == 'loaded' || script.readyState == 'complete' ) {
+
+                                      script.onreadystatechange = null;
+
+                                      callback(); 
+                               }  
+                      }
+
+                 } else {
+
+                      script.onload = function(){
+
+                             callback();
+                      } 
+                 }   
+
+                 script.setAttribute('src',url);
+
+                 document.getElementsByTagName('head')[0].appendChild(script); 
+    };
+
+    function seed(o) {
+
+             var data = o.query.results.item;
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'phpied.com';
+
+             var link = facts.getElementsByTagName('a')[0];
+
+                 link.setAttribute('target','_blank'); 
+
+                 link.innerHTML = 'Go to Link';
+
+             var out = document.createElement('p');
+
+                 out.className = 'fact';
+
+                 facts.insertBefore(out,link.parentNode); 
+                 
+            var a = document.createElement('a');
+
+                facts.appendChild(a); 
+
+            var render = function() {
+
+                link.href = data[index].link;
+
+                out.innerHTML = '<strong>[ ' + (index+1) + ' ]</strong> ' + data[index].title;
+
+                a.innerHTML = data[index++].link;
+
+                if(index == (data.length)) {index = 0;}
+            }
+
+            var button = document.createElement('button');
+
+                button.innerHTML = 'Next Title';
+
+                button.onclick = function(){render();} 
+
+                link.parentNode.insertBefore(button,link);  
+
+                render(); 
+
+    };
+
+    return {init: init, seed: seed};
+}();
+
+phpied.init();
+
+/* Get all articles from ajaxrain.com */
+
+var ajaxrain = function() {
+
+    var facts,index = 0;
+
+    function init() {
+
+                facts = document.getElementById('ajaxrain');
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'Loading Articles...';
+
+                if(facts) {  
+
+                      facts.className = 'js';
+
+                      var root = "http://query.yahooapis.com/v1/public/yql?q=";
+
+                      var yql = 'select * from rss where url="http://feeds.feedburner.com/AjaxRain"';
+
+                      var url = root + encodeURIComponent(yql) + '&format=json&callback=ajaxrain.seed';
+
+                      loadScript(url,function(){if(window.console){console.log(yql);}});
+                }
+    };
+
+    function loadScript(url,callback) {
+
+             var script = document.createElement('script');
+
+                 script.setAttribute('type','text/javascript');
+
+                 if(script.readyState) {
+
+                      script.onreadystatechange = function() {
+
+                               if(script.readyState == 'loaded' || script.readyState == 'complete' ) {
+
+                                      script.onreadystatechange = null;
+
+                                      callback(); 
+                               }  
+                      }
+
+                 } else {
+
+                      script.onload = function(){
+
+                             callback();
+                      } 
+                 }   
+
+                 script.setAttribute('src',url);
+
+                 document.getElementsByTagName('head')[0].appendChild(script); 
+    };
+
+    function seed(o) {
+
+             var data = o.query.results.item;
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'ajaxrain.com';
+
+             var link = facts.getElementsByTagName('a')[0];
+
+                 link.setAttribute('target','_blank'); 
+
+                 link.innerHTML = 'Go to Link';
+
+             var out = document.createElement('p');
+
+                 out.className = 'fact';
+
+                 facts.insertBefore(out,link.parentNode); 
+                 
+            var a = document.createElement('a');
+
+                facts.appendChild(a); 
+
+            var render = function() {
+
+                link.href = data[index].link;
+
+                out.innerHTML = '<strong>[ ' + (index+1) + ' ]</strong> ' + data[index].title;
+
+                a.innerHTML = data[index++].link;
+
+                if(index == (data.length)) {index = 0;}
+            }
+
+            var button = document.createElement('button');
+
+                button.innerHTML = 'Next Title';
+
+                button.onclick = function(){render();} 
+
+                link.parentNode.insertBefore(button,link);  
+
+                render(); 
+
+    };
+
+    return {init: init, seed: seed};
+}();
+
+ajaxrain.init();
+
+
+
+
+/* Get all articles from ajaxian.com */
+
+var ajaxian = function() {
+
+    var facts,index = 0;
+
+    function init() {
+
+                facts = document.getElementById('ajaxian');
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'Loading Articles...';
+
+                if(facts) {  
+
+                      facts.className = 'js';
+
+                      var root = "http://query.yahooapis.com/v1/public/yql?q=";
+
+                      var yql = 'select * from rss where url="http://feeds.feedburner.com/ajaxian"';
+
+                      var url = root + encodeURIComponent(yql) + '&format=json&callback=ajaxian.seed';
+
+                      loadScript(url,function(){if(window.console){console.log(yql);}});
+                }
+    };
+
+    function loadScript(url,callback) {
+
+             var script = document.createElement('script');
+
+                 script.setAttribute('type','text/javascript');
+
+                 if(script.readyState) {
+
+                      script.onreadystatechange = function() {
+
+                               if(script.readyState == 'loaded' || script.readyState == 'complete' ) {
+
+                                      script.onreadystatechange = null;
+
+                                      callback(); 
+                               }  
+                      }
+
+                 } else {
+
+                      script.onload = function(){
+
+                             callback();
+                      } 
+                 }   
+
+                 script.setAttribute('src',url);
+
+                 document.getElementsByTagName('head')[0].appendChild(script); 
+    };
+
+    function seed(o) {
+
+             var data = o.query.results.item;
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'ajaxian.com';
+
+             var link = facts.getElementsByTagName('a')[0];
+
+                 link.setAttribute('target','_blank'); 
+
+                 link.innerHTML = 'Go to Link';
+
+             var out = document.createElement('p');
+
+                 out.className = 'fact';
+
+                 facts.insertBefore(out,link.parentNode); 
+                 
+            var a = document.createElement('a');
+
+                facts.appendChild(a); 
+
+            var render = function() {
+
+                link.href = data[index].link;
+
+                out.innerHTML = '<strong>[ ' + (index+1) + ' ]</strong> ' + data[index].title;
+
+                a.innerHTML = data[index++].link;
+
+                if(index == (data.length)) {index = 0;}
+            }
+
+            var button = document.createElement('button');
+
+                button.innerHTML = 'Next Title';
+
+                button.onclick = function(){render();} 
+
+                link.parentNode.insertBefore(button,link);  
+
+                render(); 
+
+    };
+
+    return {init: init, seed: seed};
+}();
+
+ajaxian.init();
+
+
+
+/* Get all articles from nettuts.com */
+
+var nettuts = function() {
+
+    var facts,index = 0;
+
+    function init() {
+
+                facts = document.getElementById('nettuts');
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'Loading Articles...';
+
+                if(facts) {  
+
+                      facts.className = 'js';
+
+                      var root = "http://query.yahooapis.com/v1/public/yql?q=";
+
+                      var yql = 'select * from rss where url="http://feeds.feedburner.com/nettuts-summary"';
+
+                      var url = root + encodeURIComponent(yql) + '&format=json&callback=nettuts.seed';
+
+                      loadScript(url,function(){if(window.console){console.log(yql);}});
+                }
+    };
+
+    function loadScript(url,callback) {
+
+             var script = document.createElement('script');
+
+                 script.setAttribute('type','text/javascript');
+
+                 if(script.readyState) {
+
+                      script.onreadystatechange = function() {
+
+                               if(script.readyState == 'loaded' || script.readyState == 'complete' ) {
+
+                                      script.onreadystatechange = null;
+
+                                      callback(); 
+                               }  
+                      }
+
+                 } else {
+
+                      script.onload = function(){
+
+                             callback();
+                      } 
+                 }   
+
+                 script.setAttribute('src',url);
+
+                 document.getElementsByTagName('head')[0].appendChild(script); 
+    };
+
+    function seed(o) {
+
+             var data = o.query.results.item;
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'nettuts.com';
+
+             var link = facts.getElementsByTagName('a')[0];
+
+                 link.setAttribute('target','_blank'); 
+
+                 link.innerHTML = 'Go to Link';
+
+             var out = document.createElement('p');
+
+                 out.className = 'fact';
+
+                 facts.insertBefore(out,link.parentNode); 
+                 
+            var a = document.createElement('a');
+
+                facts.appendChild(a); 
+
+            var render = function() {
+
+                link.href = data[index].link;
+
+                out.innerHTML = '<strong>[ ' + (index+1) + ' ]</strong> ' + data[index].title;
+
+                a.innerHTML = data[index++].link;
+
+                if(index == (data.length)) {index = 0;}
+            }
+
+            var button = document.createElement('button');
+
+                button.innerHTML = 'Next Title';
+
+                button.onclick = function(){render();} 
+
+                link.parentNode.insertBefore(button,link);  
+
+                render(); 
+
+    };
+
+    return {init: init, seed: seed};
+}();
+
+nettuts.init();
+
+
+/* Get all articles from mootools.com/blog */
+
+var mootoolsblog = function() {
+
+    var facts,index = 0;
+
+    function init() {
+
+                facts = document.getElementById('mootoolsblog');
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'Loading Articles...';
+
+                if(facts) {  
+
+                      facts.className = 'js';
+
+                      var root = "http://query.yahooapis.com/v1/public/yql?q=";
+
+                      var yql = 'select * from rss where url="http://feeds.feedburner.com/mootools-blog"';
+
+                      var url = root + encodeURIComponent(yql) + '&format=json&callback=mootoolsblog.seed';
+
+                      loadScript(url,function(){if(window.console){console.log(yql);}});
+                }
+    };
+
+    function loadScript(url,callback) {
+
+             var script = document.createElement('script');
+
+                 script.setAttribute('type','text/javascript');
+
+                 if(script.readyState) {
+
+                      script.onreadystatechange = function() {
+
+                               if(script.readyState == 'loaded' || script.readyState == 'complete' ) {
+
+                                      script.onreadystatechange = null;
+
+                                      callback(); 
+                               }  
+                      }
+
+                 } else {
+
+                      script.onload = function(){
+
+                             callback();
+                      } 
+                 }   
+
+                 script.setAttribute('src',url);
+
+                 document.getElementsByTagName('head')[0].appendChild(script); 
+    };
+
+    function seed(o) {
+
+             var data = o.query.results.item;
+
+                facts.getElementsByTagName('h2')[0].innerHTML = 'mootools.com/blog';
+
+             var link = facts.getElementsByTagName('a')[0];
+
+                 link.setAttribute('target','_blank'); 
+
+                 link.innerHTML = 'Go to Link';
+
+             var out = document.createElement('p');
+
+                 out.className = 'fact';
+
+                 facts.insertBefore(out,link.parentNode); 
+                 
+            var a = document.createElement('a');
+
+                facts.appendChild(a); 
+
+            var render = function() {
+
+                link.href = data[index].link;
+
+                out.innerHTML = '<strong>[ ' + (index+1) + ' ]</strong> ' + data[index].title;
+
+                a.innerHTML = data[index++].link;
+
+                if(index == (data.length)) {index = 0;}
+            }
+
+            var button = document.createElement('button');
+
+                button.innerHTML = 'Next Title';
+
+                button.onclick = function(){render();} 
+
+                link.parentNode.insertBefore(button,link);  
+
+                render(); 
+
+    };
+
+    return {init: init, seed: seed};
+}();
+
+mootoolsblog.init();
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>Turning an HTML page into a widget using YQL</title>
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/base/base.css" type="text/css">
+   <style type="text/css">
+    html,body{background: #ECECEC;color: #fff;font-family: helvetica,arial,verdana,sans-serif}
+    h1{color: #444;text-shadow:1px 3px 3px #ffff00}
+    #davidwalsh h2{text-shadow:1px 3px 3px #ccc}
+    #davidwalsh.js button{display:block;background:#96A0E2;border:1px solid #D0D6FF;padding:.2em;color:#000;margin:.5em 0;-moz-border-radius:5px;}
+    #davidwalsh.js button:hover{border: 1px solid #D0D6FF;background: #D0D6FF;color: #444;}
+    #davidwalsh.js p{float:right;width:20%;margin-top:-3em;text-shadow:1px 3px 3px #ffff00}
+    #davidwalsh a{color:#fff;font-weight: bold}
+    #davidwalsh.js p.fact{float:left;width:77%;padding-right:2%;margin-top:0;}
+    #davidwalsh.js{background: #5764B6;-moz-border-radius:5px;padding:.5em;overflow:auto;}
+    #ft p{color: #fff;font-family: calibri;font-size: 12px;background: #5764B6;width: 150px;padding: 1px;text-align: center;float: right}
+   </style>
+</head>
+<body>
+<div id="doc" class="yui-t7">
+   <div id="hd" role="banner"><h1>Turning a RSS Feed page into a widget using YQL</h1></div>
+   <div id="bd" role="main">
+	<div class="yui-g">
+	
+           <div id="davidwalsh">
+           </div>
+
+	</div>
+
+	</div>
+
+   <div id="ft" role="contentinfo"><p>written by Adrian Statescu</p></div>
+
+</div><!-- end doc -->
+
+<script type="text/javascript">
+
+/* This will be used later */
+String.prototype.supplant = function(o) {
+
+       return this.replace(/{([^{}]*)}/g,
+
+              function(a,b) {
+
+                   var r = o[b];
+
+                   return (typeof r === 'string' || typeof r === 'number') ? r : a;
+              }
+       ); 
+}
+
+//show me love to the singleton
+var davidwalsh = function() {
+
+    /* private vars */
+    var facts,index=0;
+
+    var base = '<h2>Loading RSS From davidwalsh.com...</h2>'+
+
+                    '<p><a href="http://davidwalsh.com">Some huge</a></p>';
+
+    var template = '<p class="fact"><strong>[ {num} ]</strong> {title}</p><a href="{link}">{link}</a>';
+
+    /* private method */
+    function init() {
+
+                facts = document.getElementById('davidwalsh');
+
+                if(!facts) {return;}
+
+                facts.innerHTML = base;
+
+                if(facts) {  
+
+                      facts.className = 'js';
+
+                      var root = "http://query.yahooapis.com/v1/public/yql?q=";
+
+                      var yql = "select title,link from rss where url='http://davidwalsh.name/feed'";
+
+                      var url = root + encodeURIComponent(yql) + '&format=json&callback=davidwalsh.seed';
+
+                          loadScript(url,function(){if(window.console){console.log('YQL:' + yql);console.log('Loaded Script');}});
+                }
+    };
+
+    /* private method */
+    function loadScript(url,callback) {
+
+             var script = document.createElement('script');
+
+                 script.setAttribute('type','text/javascript');
+
+                 if(script.readyState) {
+
+                      script.onreadystatechange = function() {
+
+                               if(script.readyState == 'loaded' || script.readyState == 'complete' ) {
+
+                                      script.onreadystatechange = null;
+
+                                      callback(); 
+                               }  
+                      }
+
+                 } else {
+
+                      script.onload = function(){
+
+                             callback();
+                      } 
+                 }   
+
+                 script.setAttribute('src',url);
+
+                 document.getElementsByTagName('head')[0].appendChild(script); 
+    };
+
+    /* private method */
+    function seed(o) { 
+
+             facts.getElementsByTagName('h2')[0].innerHTML = 'davidwalsh.com'; 
+
+             var data = o.query.results.item;
+console.log(data)
+             var link = facts.getElementsByTagName('a')[0];
+
+                 link.innerHTML = '(Go to Article)';
+
+             var div = document.createElement('div');
+
+                 facts.appendChild(div);
+
+                 function render() {
+
+                       var ran = index++;
+
+                       var json = {};
+
+                       json = {num: index,title: data[ran].title,link: data[ran].link};  
+
+                       div.innerHTML = template.supplant(json);
+
+                       link.setAttribute('href',data[ran].link.href);
+ 
+                       if(index == data.length) {index=0;}                    
+                 } 
+
+            var button = document.createElement('button');
+
+                button.innerHTML = 'Get Another Title';
+
+                button.onclick = render;
+
+                link.parentNode.insertBefore(button,link);
+
+                render();
+    };
+
+    /* return an object that points at the private methods which I want to revealed*/
+    return {init: init, seed: seed};
+
+}();//do EXEC
+
+//do initialization of the singleton
+davidwalsh.init();
+
+</script>
+</body>
+</html>

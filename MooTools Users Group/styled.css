@@ -1,0 +1,9 @@
+#usersgroupbadge strong{font-weight: bold}
+#usersgroupbadge {-moz-box-shadow:0 4px 4px #ccc;font-size:12px;font-family:helvetica,arial,sans-serif;border: 5px solid #CAFFA3;width:400px;padding:5px;background: #CAFFA3;-moz-box-shadow:0 4px 4px #fffff;}
+#usersgroupbadge *{margin:0;padding:0;list-style:none;}
+#usersgroupbadge li{margin-bottom:.5em;}
+#usersgroupbadge h4{margin:0.5em 0;font-size: 25px;color: #444;font-weight: bold;text-shadow:1px 3px 3px #fff}
+#usersgroupbadge a{font-weight:bold;font-size:15px;color:#537516;text-decoration:none;}
+#usersgroupbadge {width:400px;}
+#usersgroupbadge p{background: #fff;padding: 4px}
+#usersgroupbadge a#usersgrouplink{font-size: 20px;text-shadow:1px 3px 3px #fff}

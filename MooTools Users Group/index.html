@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>MooTools Users Group Badge - A Badge for MooTools Users Group their latest topics on groups.google.com</title>
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <style type="text/css">
+   html,body{background:#CAFFA3;margin:0;padding:0;}
+   #doc{background:#fff;border:1em solid #fff;} 
+   h1{font-family:Calibri,Arial,Sans-serif;font-size:300%;margin:0 0 .5em 0; padding:0;text-shadow:1px 3px 3px #CAFFA3;font-weight: bold}
+   #ft{color:#ccc;font-style: verdana;font-size:100%;position:relative;text-align: left;margin:3em 0 0 0 ;}
+   #ft a{color:#999;}
+   </style>
+</head>
+<body>
+<div id="doc" class="yui-t7">
+   <div id="hd" role="banner"><h1>MooTools Users Group Badge using YQL</h1></div>
+   <div id="bd" role="main">
+	<div class="yui-g">
+
+               <div id="usersgroupbadge">
+ 
+                    <a href="http://groups.google.com/group/mootools-users/feed/rss_v2_0_msgs.xml" id="usersgrouplink">MooTools Users Group</a>
+
+               </div>
+
+	</div>
+
+    </div>
+
+   <div id="ft" role="contentinfo"><p>Created By Adrian Statescu</p></div>
+
+</div>
+
+<script type="text/javascript" src="usersgroupbadge.js"></script>
+<script type="text/javascript">
+
+usersgroupbadge.init({
+
+     amount: 5, /* amount of topics */
+
+     styled: true, /* Boolean if the style if applied or not */
+
+     headerText: 'Discussions' /* Text of the header */
+
+});
+
+</script>
+</body>
+</html>
